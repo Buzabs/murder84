@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ppex6kmmv05y" path="res://Player/player.tscn" id="1_nxrqf"]
 [ext_resource type="Texture2D" uid="uid://yaxhjjv5icsv" path="res://Assets/Placeholders/room.png" id="2_hj615"]
+[ext_resource type="PackedScene" uid="uid://bpjjidpwnfgp2" path="res://weapons/shotgun.tscn" id="2_p5beq"]
 
 [node name="TestMap" type="Node" unique_id=196491887]
 
@@ -9,6 +10,9 @@
 
 [node name="Player" parent="." unique_id=200400303 instance=ExtResource("1_nxrqf")]
 position = Vector2(14, -14)
+speed = 400
+
+[node name="Shotgun" parent="Player" unique_id=2129841805 instance=ExtResource("2_p5beq")]
 
 [node name="Room" type="Sprite2D" parent="." unique_id=137493563]
 texture = ExtResource("2_hj615")

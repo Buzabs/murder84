@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bpjjidpwnfgp2"]
+
+[ext_resource type="Script" uid="uid://b3fc8canet5lg" path="res://Scripts/Weapons/shotgun.gd" id="1_64lnt"]
+[ext_resource type="Texture2D" uid="uid://c6hi6c0htgooo" path="res://Assets/Placeholders/shotgun.png" id="1_kwm0t"]
+[ext_resource type="Script" uid="uid://cftoqkcx1wjo7" path="res://Scripts/marker_2d.gd" id="3_byptj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_53uw3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kwm0t")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Shotgun" type="Node2D" unique_id=2129841805 node_paths=PackedStringArray("marker2d", "timer")]
+script = ExtResource("1_64lnt")
+marker2d = NodePath("Marker2D")
+timer = NodePath("Timer")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=115856846]
+sprite_frames = SubResource("SpriteFrames_53uw3")
+offset = Vector2(32, 0)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=446687179]
+position = Vector2(58, 0)
+script = ExtResource("3_byptj")
+
+[node name="Timer" type="Timer" parent="." unique_id=1125519062]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
