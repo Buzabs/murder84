@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://urb62sjeegha"]
+
+[ext_resource type="Texture2D" uid="uid://c6hi6c0htgooo" path="res://Assets/Placeholders/shotgun.png" id="1_82cyu"]
+[ext_resource type="Script" uid="uid://rl0dxmyptcy4" path="res://Items/item_data.gd" id="1_xad46"]
+[ext_resource type="PackedScene" uid="uid://bpjjidpwnfgp2" path="res://weapons/shotgun.tscn" id="2_ndc31"]
+
+[resource]
+script = ExtResource("1_xad46")
+item_name = "Shotgun"
+item_icon = ExtResource("1_82cyu")
+item_scene = ExtResource("2_ndc31")
+metadata/_custom_type_script = "uid://rl0dxmyptcy4"

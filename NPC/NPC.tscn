@@ -17,7 +17,7 @@ script = ExtResource("1_6fl5w")
 
 [node name="StateMachine" type="Node" parent="." unique_id=1165740488 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("1_gxmj8")
-initial_state = NodePath("dead")
+initial_state = NodePath("wander")
 
 [node name="wander" type="Node" parent="StateMachine" unique_id=1488839005]
 script = ExtResource("2_qm8nd")

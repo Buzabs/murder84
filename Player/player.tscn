@@ -17,9 +17,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ntmi"]
 size = Vector2(28, 32)
 
-[node name="Player" type="CharacterBody2D" unique_id=200400303]
+[node name="Player" type="CharacterBody2D" unique_id=200400303 node_paths=PackedStringArray("hand")]
 script = ExtResource("1_4ntmi")
 speed = 200
+hand = NodePath("Hand")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=795008773]
 texture_filter = 1
@@ -27,3 +28,6 @@ sprite_frames = SubResource("SpriteFrames_l88s5")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=507221996]
 shape = SubResource("RectangleShape2D_4ntmi")
+
+[node name="Hand" type="Marker2D" parent="." unique_id=807293597]
+position = Vector2(11, 2)

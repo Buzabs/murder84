@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dht7dhhd866kl"]
+
+[ext_resource type="Script" uid="uid://xoa3qf1nkqgm" path="res://Scripts/camera.gd" id="1_xregt"]
+[ext_resource type="PackedScene" uid="uid://42wxaob622bf" path="res://Maps/room.tscn" id="1_y1xyx"]
+[ext_resource type="PackedScene" uid="uid://ppex6kmmv05y" path="res://Player/player.tscn" id="3_ev8si"]
+[ext_resource type="PackedScene" uid="uid://bougn26h7pydc" path="res://NPC/NPC.tscn" id="5_scb4q"]
+[ext_resource type="Texture2D" uid="uid://b44in805uf0gk" path="res://Assets/Placeholders/npc_dead.png" id="6_3sehy"]
+[ext_resource type="PackedScene" uid="uid://gl22bsxl3w20" path="res://Items/pickup.tscn" id="6_scb4q"]
+[ext_resource type="Resource" uid="uid://urb62sjeegha" path="res://Items/ItemResources/shotgun_resource.tres" id="7_mensd"]
+
+[node name="Test" type="Node2D" unique_id=1171783621]
+
+[node name="Camera" type="Camera2D" parent="." unique_id=2027310501]
+script = ExtResource("1_xregt")
+metadata/_custom_type_script = "uid://xoa3qf1nkqgm"
+
+[node name="Room" parent="." unique_id=1561660169 instance=ExtResource("1_y1xyx")]
+position = Vector2(160, 89)
+room_id = "Kitchen "
+
+[node name="Room2" parent="." unique_id=24690516 instance=ExtResource("1_y1xyx")]
+position = Vector2(480, 89)
+room_id = " Hall"
+
+[node name="Room3" parent="." unique_id=533208011 instance=ExtResource("1_y1xyx")]
+position = Vector2(160, 269)
+room_id = " Bedroom"
+
+[node name="Player" parent="." unique_id=200400303 instance=ExtResource("3_ev8si")]
+position = Vector2(161, 102)
+
+[node name="Npc" parent="." unique_id=1508994874 node_paths=PackedStringArray("actions") instance=ExtResource("5_scb4q")]
+position = Vector2(79, 112)
+actions = {
+NodePath("../Piano"): 10.0,
+NodePath("../Table"): 10.0
+}
+sprite_dead = ExtResource("6_3sehy")
+
+[node name="Piano" type="Marker2D" parent="." unique_id=914160254]
+position = Vector2(268, 132)
+
+[node name="Table" type="Marker2D" parent="." unique_id=1874602911]
+position = Vector2(376, 36)
+
+[node name="Pickup" parent="." unique_id=936480274 instance=ExtResource("6_scb4q")]
+position = Vector2(232, 58)
+item_to_give = ExtResource("7_mensd")
