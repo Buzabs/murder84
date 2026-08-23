@@ -1,7 +1,7 @@
 class_name WanderState
 extends State
 
-var speed = 200
+var speed = 100
 var current_target: Vector2
 var wandering_started := false
 
@@ -26,6 +26,8 @@ func physics_process(delta: float) -> void:
 func move_towards(target_position):
 	if parent.global_position.distance_to(target_position) > 4.0:
 		var direction = parent.global_position.direction_to(target_position)
+		var avoid = parent.get_avoidance_vector()
+		direction = (direction + avoid * 3).normalized()
 		parent.velocity = direction * speed
 	else:
 		parent.velocity = Vector2.ZERO	

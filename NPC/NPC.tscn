@@ -9,6 +9,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l88s5"]
 size = Vector2(26, 32)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_l88s5"]
+radius = 28.071337
+
 [node name="Npc" type="CharacterBody2D" unique_id=1508994874]
 script = ExtResource("1_6fl5w")
 
@@ -29,3 +32,21 @@ texture = ExtResource("1_4ba72")
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=752030339]
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_l88s5")
+
+[node name="AreaOfVision" type="Area2D" parent="." unique_id=2111329966]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AreaOfVision" unique_id=586424848]
+position = Vector2(-87, -1.364242e-12)
+scale = Vector2(7.2265625, 3.4062498)
+polygon = PackedVector2Array(10.931892, -1.679867e-06, 18, -10, 18, 10)
+
+[node name="Polygon2D" type="Polygon2D" parent="AreaOfVision" unique_id=1944353170]
+color = Color(1, 1, 1, 0.3254902)
+polygon = PackedVector2Array(-8, 0, 43, 34, 43, -34)
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1976724234]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=490001900]
+shape = SubResource("CircleShape2D_l88s5")
+
+[connection signal="body_entered" from="AreaOfVision" to="." method="_on_area_of_vision_body_entered"]
