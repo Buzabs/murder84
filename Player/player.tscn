@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ppex6kmmv05y"]
+
+[ext_resource type="Script" uid="uid://k2gc1if8b630" path="res://Scripts/Player/player.gd" id="1_4ntmi"]
+[ext_resource type="Texture2D" uid="uid://dacqpdvswopjq" path="res://Assets/Placeholders/Baldman.png" id="2_4ntmi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l88s5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4ntmi")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ntmi"]
+size = Vector2(28, 32)
+
+[node name="Player" type="CharacterBody2D" unique_id=200400303]
+script = ExtResource("1_4ntmi")
+speed = 200
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=795008773]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_l88s5")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=507221996]
+shape = SubResource("RectangleShape2D_4ntmi")

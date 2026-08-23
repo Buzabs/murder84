@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://edja0mf5qdgk"]
+
+[ext_resource type="PackedScene" uid="uid://ppex6kmmv05y" path="res://Player/player.tscn" id="1_nxrqf"]
+[ext_resource type="Texture2D" uid="uid://yaxhjjv5icsv" path="res://Assets/Placeholders/room.png" id="2_hj615"]
+
+[node name="TestMap" type="Node" unique_id=196491887]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2069723806]
+
+[node name="Player" parent="." unique_id=200400303 instance=ExtResource("1_nxrqf")]
+position = Vector2(14, -14)
+
+[node name="Room" type="Sprite2D" parent="." unique_id=137493563]
+texture = ExtResource("2_hj615")
