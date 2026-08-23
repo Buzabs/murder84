@@ -8,9 +8,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l88s5"]
 size = Vector2(26, 32)
 
-[node name="Npc" type="CharacterBody2D" unique_id=1508994874 node_paths=PackedStringArray("targets")]
+[node name="Npc" type="CharacterBody2D" unique_id=1508994874]
 script = ExtResource("1_6fl5w")
-targets = [null, null]
 
 [node name="StateMachine" type="Node" parent="." unique_id=1165740488 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("1_gxmj8")

@@ -14,13 +14,15 @@ position = Vector2(14, -14)
 [node name="Room" type="Sprite2D" parent="." unique_id=137493563]
 texture = ExtResource("2_hj615")
 
-[node name="Marker2D" type="Marker2D" parent="." unique_id=1370893264]
+[node name="Table" type="Marker2D" parent="." unique_id=1370893264]
 position = Vector2(-102, -52)
 
-[node name="Marker2D2" type="Marker2D" parent="." unique_id=925323056]
-position = Vector2(113, 43)
+[node name="Piano" type="Marker2D" parent="." unique_id=925323056]
+position = Vector2(112, 45)
 
-[node name="Npc" parent="." unique_id=1508994874 node_paths=PackedStringArray("targets") instance=ExtResource("3_p5beq")]
+[node name="Npc" parent="." unique_id=1508994874 node_paths=PackedStringArray("actions") instance=ExtResource("3_p5beq")]
 position = Vector2(-65, 26)
-targets = [NodePath("../Marker2D"), NodePath("../Marker2D2")]
-time_on_target = Array[float]([0.0])
+actions = {
+NodePath("../Table"): 10.0,
+NodePath("../Piano"): 15.0
+}
