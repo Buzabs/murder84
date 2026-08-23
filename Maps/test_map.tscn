@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ppex6kmmv05y" path="res://Player/player.tscn" id="1_nxrqf"]
 [ext_resource type="Texture2D" uid="uid://yaxhjjv5icsv" path="res://Assets/Placeholders/room.png" id="2_hj615"]
+[ext_resource type="PackedScene" uid="uid://bougn26h7pydc" path="res://NPC/NPC.tscn" id="3_p5beq"]
 
 [node name="TestMap" type="Node" unique_id=196491887]
 
@@ -12,3 +13,14 @@ position = Vector2(14, -14)
 
 [node name="Room" type="Sprite2D" parent="." unique_id=137493563]
 texture = ExtResource("2_hj615")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1370893264]
+position = Vector2(-102, -52)
+
+[node name="Marker2D2" type="Marker2D" parent="." unique_id=925323056]
+position = Vector2(113, 43)
+
+[node name="Npc" parent="." unique_id=1508994874 node_paths=PackedStringArray("targets") instance=ExtResource("3_p5beq")]
+position = Vector2(-65, 26)
+targets = [NodePath("../Marker2D"), NodePath("../Marker2D2")]
+time_on_target = Array[float]([0.0])

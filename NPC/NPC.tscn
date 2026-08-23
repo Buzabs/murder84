@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bougn26h7pydc"]
+
+[ext_resource type="Texture2D" uid="uid://cc7e5tyvc44yi" path="res://Assets/Placeholders/npc.png" id="1_4ba72"]
+[ext_resource type="Script" uid="uid://dbv1pxl765dt2" path="res://Scripts/NPC/npc.gd" id="1_6fl5w"]
+[ext_resource type="Script" uid="uid://dw0q3eaxpcrmq" path="res://Scripts/StateMachine/state_machine.gd" id="1_gxmj8"]
+[ext_resource type="Script" uid="uid://kvxlsqa70brw" path="res://Scripts/StateMachine/NPC_states/wander.gd" id="2_qm8nd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l88s5"]
+size = Vector2(26, 32)
+
+[node name="Npc" type="CharacterBody2D" unique_id=1508994874 node_paths=PackedStringArray("targets")]
+script = ExtResource("1_6fl5w")
+targets = [null, null]
+
+[node name="StateMachine" type="Node" parent="." unique_id=1165740488 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("1_gxmj8")
+initial_state = NodePath("wander")
+
+[node name="wander" type="Node" parent="StateMachine" unique_id=1488839005]
+script = ExtResource("2_qm8nd")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1614066700]
+texture = ExtResource("1_4ba72")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=752030339]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_l88s5")
