@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ppex6kmmv05y" path="res://Player/player.tscn" id="1_nxrqf"]
 [ext_resource type="Texture2D" uid="uid://yaxhjjv5icsv" path="res://Assets/Placeholders/room.png" id="2_hj615"]
 [ext_resource type="PackedScene" uid="uid://bougn26h7pydc" path="res://NPC/NPC.tscn" id="3_p5beq"]
+[ext_resource type="Texture2D" uid="uid://b44in805uf0gk" path="res://Assets/Placeholders/npc_dead.png" id="4_xtlx7"]
 
 [node name="TestMap" type="Node" unique_id=196491887]
 
@@ -26,3 +27,4 @@ actions = {
 NodePath("../Table"): 10.0,
 NodePath("../Piano"): 15.0
 }
+sprite_dead = ExtResource("4_xtlx7")
