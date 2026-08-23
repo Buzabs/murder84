@@ -1,12 +1,20 @@
 [gd_scene format=3 uid="uid://edja0mf5qdgk"]
 
 [ext_resource type="PackedScene" uid="uid://ppex6kmmv05y" path="res://Player/player.tscn" id="1_nxrqf"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://yaxhjjv5icsv" path="res://Assets/Placeholders/room.png" id="2_hj615"]
 [ext_resource type="PackedScene" uid="uid://bpjjidpwnfgp2" path="res://weapons/shotgun.tscn" id="2_p5beq"]
+=======
+[ext_resource type="Script" uid="uid://xoa3qf1nkqgm" path="res://Scripts/camera.gd" id="1_usaaq"]
+[ext_resource type="PackedScene" uid="uid://bougn26h7pydc" path="res://NPC/NPC.tscn" id="3_p5beq"]
+[ext_resource type="Texture2D" uid="uid://b44in805uf0gk" path="res://Assets/Placeholders/npc_dead.png" id="4_xtlx7"]
+[ext_resource type="PackedScene" uid="uid://42wxaob622bf" path="res://Maps/room.tscn" id="5_usaaq"]
+>>>>>>> origin/main
 
 [node name="TestMap" type="Node" unique_id=196491887]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2069723806]
+[node name="Camera" type="Camera2D" parent="." unique_id=2069723806]
+script = ExtResource("1_usaaq")
 
 [node name="Player" parent="." unique_id=200400303 instance=ExtResource("1_nxrqf")]
 position = Vector2(14, -14)
@@ -14,5 +22,31 @@ speed = 400
 
 [node name="Shotgun" parent="Player" unique_id=2129841805 instance=ExtResource("2_p5beq")]
 
-[node name="Room" type="Sprite2D" parent="." unique_id=137493563]
-texture = ExtResource("2_hj615")
+[node name="Table" type="Marker2D" parent="." unique_id=1370893264]
+position = Vector2(-102, -52)
+
+[node name="Piano" type="Marker2D" parent="." unique_id=925323056]
+position = Vector2(112, 45)
+
+[node name="Corner" type="Marker2D" parent="." unique_id=1016005130]
+position = Vector2(-133, 65)
+
+[node name="Npc" parent="." unique_id=1508994874 node_paths=PackedStringArray("actions") instance=ExtResource("3_p5beq")]
+position = Vector2(-15, 38)
+actions = {
+NodePath("../Table"): 3.0,
+NodePath("../Piano"): 4.0,
+NodePath("../Corner"): 10.0
+}
+sprite_dead = ExtResource("4_xtlx7")
+
+[node name="Room3" parent="." unique_id=1561660169 instance=ExtResource("5_usaaq")]
+position = Vector2(-321, 180)
+room_id = "Dining"
+
+[node name="Room2" parent="." unique_id=663501411 instance=ExtResource("5_usaaq")]
+position = Vector2(-320, 0)
+room_id = " Hall"
+
+[node name="Room" parent="." unique_id=1928417404 instance=ExtResource("5_usaaq")]
+room_id = " Kitchen"
