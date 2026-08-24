@@ -5,5 +5,6 @@ extends Node2D
 @onready var room_center: Marker2D = $RoomCenter
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	SignalBus.room_entered.emit(room_id)
-	print("entered room", room_id)
+	if body is Player:
+		SignalBus.room_entered.emit(room_id)
+		print("entered room", room_id)

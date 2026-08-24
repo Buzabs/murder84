@@ -9,4 +9,6 @@ func enter(previous_state: State) -> void:
 			child.texture = parent.sprite_dead
 	
 	area_of_vision.visible = false
-	
+	area_of_vision.set_deferred("monitoring", false)
+	parent.nav_agent.set_physics_process(false)
+	parent.nav_agent.avoidance_enabled = false

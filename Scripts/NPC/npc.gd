@@ -4,19 +4,18 @@ extends CharacterBody2D
 @export var actions: Dictionary[Marker2D, float]= {}
 @export var sprite_dead: Texture
 
-@onready var detection_area: Area2D = $DetectionArea
+@export var nav_agent: NavigationAgent2D
 
-func get_avoidance_vector() -> Vector2:
-	var avoid := Vector2.ZERO
+@export var npc_name: String
+
+func _ready() -> void:
+	nav_agent.avoidance_enabled = true
+	nav_agent.velocity_computed.connect(_on_velocity_computed)
+
+func _on_velocity_computed(safe_velocity: Vector2) -> void:
+	velocity = safe_velocity
+	move_and_slide()
 	
-	for body in detection_area.get_overlapping_bodies():
-		if body == self:
-			continue
-		var away = global_position - body.global_position
-		var dist = away.length()
-		if dist > 0.0:
-			avoid += away.normalized() / dist
-	return avoid
 
 func _on_area_of_vision_body_entered(body: Node2D) -> void:
 	print("Uh oh! Stop doing naughty stuff!")

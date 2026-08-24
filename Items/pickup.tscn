@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://gl22bsxl3w20"]
+
+[ext_resource type="Script" uid="uid://c81dqi3cjylap" path="res://Scripts/Inventory/pickup.gd" id="1_5p7j5"]
+[ext_resource type="Texture2D" uid="uid://c6hi6c0htgooo" path="res://Assets/Placeholders/shotgun.png" id="2_xevvu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5p7j5"]
+
+[node name="Pickup" type="Area2D" unique_id=936480274]
+script = ExtResource("1_5p7j5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2146895428]
+shape = SubResource("RectangleShape2D_5p7j5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=873808027]
+texture = ExtResource("2_xevvu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
