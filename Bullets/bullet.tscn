@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://b0smeacr3swxc"]
 
-[ext_resource type="Texture2D" uid="uid://8tb03mh3vujh" path="res://Assets/Placeholders/Bullet.png" id="1_fbet0"]
-[ext_resource type="Script" uid="uid://ben4saakrjjsd" path="res://Scripts/Bullets/bullet.gd" id="1_ynbwo"]
+[ext_resource type="Script" uid="uid://ben4saakrjjsd" path="res://Scripts/Bullets/bullet.gd" id="1_p5eas"]
+[ext_resource type="Texture2D" uid="uid://8tb03mh3vujh" path="res://Assets/Placeholders/Bullet.png" id="2_46820"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ynbwo"]
 size = Vector2(16, 4)
 
 [node name="Bullet" type="Node2D" unique_id=275058789]
-script = ExtResource("1_ynbwo")
+script = ExtResource("1_p5eas")
 speed = 7
 lifespan = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1982645209]
-texture = ExtResource("1_fbet0")
+texture = ExtResource("2_46820")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1181528693]
 

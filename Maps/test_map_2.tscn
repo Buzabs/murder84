@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cv8hg27f2wxvk"]
+
+[ext_resource type="PackedScene" uid="uid://42wxaob622bf" path="res://Maps/room.tscn" id="1_2wmke"]
+[ext_resource type="PackedScene" uid="uid://ppex6kmmv05y" path="res://Player/player.tscn" id="2_3vfi6"]
+[ext_resource type="PackedScene" uid="uid://bpjjidpwnfgp2" path="res://weapons/shotgun.tscn" id="3_n2fhh"]
+
+[node name="test_map_2" type="Node2D" unique_id=923018295]
+
+[node name="Room" parent="." unique_id=1561660169 instance=ExtResource("1_2wmke")]
+position = Vector2(160, 90)
+
+[node name="Player" parent="." unique_id=200400303 instance=ExtResource("2_3vfi6")]
+position = Vector2(137, 87)
+
+[node name="Shotgun" parent="Player" unique_id=2129841805 instance=ExtResource("3_n2fhh")]

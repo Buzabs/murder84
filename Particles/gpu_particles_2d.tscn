@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://buko1fx8aln3l"]
+
+[ext_resource type="Script" uid="uid://b0knlq128a2ul" path="res://Scripts/Particles/gpu_particles_2d.gd" id="1_135v8"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_53uw3"]
+particle_flag_disable_z = true
+inherit_velocity_ratio = 0.481
+velocity_pivot = Vector3(0, -50, 0)
+direction = Vector3(1, -50, 0)
+initial_velocity_min = 0.39999998
+initial_velocity_max = 205.26
+gravity = Vector3(0, 98, 0)
+color = Color(1, 0.84313726, 0, 1)
+
+[node name="GPUParticles2D" type="GPUParticles2D" unique_id=333218133]
+emitting = false
+amount = 4
+lifetime = 0.42
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_53uw3")
+script = ExtResource("1_135v8")

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dvaxhfkhihs4t"]
+
+[ext_resource type="Texture2D" uid="uid://5aes02nqqiy4" path="res://Assets/Placeholders/Toaster.png" id="1_yhtv5"]
+
+[node name="Toaster" type="Node2D" unique_id=724533010]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=267094412]
+texture = ExtResource("1_yhtv5")
