@@ -14,8 +14,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ntmi"]
-size = Vector2(28, 32)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_scb4q"]
+radius = 7.0
 
 [node name="Player" type="CharacterBody2D" unique_id=200400303 node_paths=PackedStringArray("hand")]
 script = ExtResource("1_4ntmi")
@@ -27,7 +27,10 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_l88s5")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=507221996]
-shape = SubResource("RectangleShape2D_4ntmi")
+shape = SubResource("CapsuleShape2D_scb4q")
 
 [node name="Hand" type="Marker2D" parent="." unique_id=807293597]
 position = Vector2(11, 2)
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=1686678565]
+radius = 26.49

@@ -12,3 +12,5 @@ func _process(delta: float) -> void:
 	lifespan -= 1
 	if lifespan <= 0:
 		queue_free()
+
+		

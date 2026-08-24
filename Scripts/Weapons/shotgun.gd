@@ -1,7 +1,7 @@
 class_name Shotgun
 extends Node2D
 
-@onready var bullet_scene = preload("res://Bullets/node_2d.tscn")
+@onready var bullet_scene = preload("res://Bullets/bullet.tscn")
 @export var marker2d: Marker2D
 @export var timer: Timer
 var can_shoot_bull = true

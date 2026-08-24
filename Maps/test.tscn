@@ -8,6 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://gl22bsxl3w20" path="res://Items/pickup.tscn" id="6_scb4q"]
 [ext_resource type="Resource" uid="uid://urb62sjeegha" path="res://Items/ItemResources/shotgun_resource.tres" id="7_mensd"]
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_l88s5"]
+vertices = PackedVector2Array(622.0469, 13.9296875, 622.9375, 165.84375, 297.77344, 160.84375, 9.2890625, 10.0625, 18.71875, 341.96094, 301.77344, 341.03125)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1, 0, 632, 4, 633, 176, 308, 171, 312, 351, 9, 352)])
+
 [node name="Test" type="Node2D" unique_id=1171783621]
 
 [node name="Camera" type="Camera2D" parent="." unique_id=2027310501]
@@ -46,3 +51,6 @@ position = Vector2(376, 36)
 [node name="Pickup" parent="." unique_id=936480274 instance=ExtResource("6_scb4q")]
 position = Vector2(232, 58)
 item_to_give = ExtResource("7_mensd")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1320374833]
+navigation_polygon = SubResource("NavigationPolygon_l88s5")
