@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ccc6bcgephsa3"]
+
+[ext_resource type="Script" uid="uid://dcjwdigrvuphj" path="res://Scripts/Bullets/toaster_bullet.gd" id="1_i7sg7"]
+[ext_resource type="Texture2D" uid="uid://5aes02nqqiy4" path="res://Assets/Placeholders/Toaster.png" id="2_ptvp0"]
+
+[node name="toaster_bullet" type="Node2D" unique_id=1539899052 node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_i7sg7")
+sprite = NodePath("Sprite2D")
+speed = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2060106871]
+texture = ExtResource("2_ptvp0")
