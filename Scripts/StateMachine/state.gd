@@ -1,7 +1,7 @@
 class_name State
 extends Node
 
-var parent: Npc
+var parent: CharacterBody2D
 var state_machine: StateMachine
 
 func enter(previous_state: State) -> void:
