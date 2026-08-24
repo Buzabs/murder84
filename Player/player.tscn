@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://k2gc1if8b630" path="res://Scripts/Player/player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://dacqpdvswopjq" path="res://Assets/Placeholders/Baldman.png" id="2_4ntmi"]
+[ext_resource type="Script" uid="uid://dw0q3eaxpcrmq" path="res://Scripts/StateMachine/state_machine.gd" id="2_btcbx"]
+[ext_resource type="Script" uid="uid://d2asn4dwqtj0s" path="res://Scripts/StateMachine/PlayerStates/idle.gd" id="3_k53q1"]
+[ext_resource type="Script" uid="uid://cw5caalj8576h" path="res://Scripts/StateMachine/PlayerStates/walk.gd" id="4_fhl08"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l88s5"]
 animations = [{
@@ -19,8 +22,20 @@ radius = 7.0
 
 [node name="Player" type="CharacterBody2D" unique_id=200400303 node_paths=PackedStringArray("hand")]
 script = ExtResource("1_4ntmi")
-speed = 200
 hand = NodePath("Hand")
+
+[node name="StateMachine" type="Node" parent="." unique_id=1831999296 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_btcbx")
+initial_state = NodePath("Idle")
+metadata/_custom_type_script = "uid://dw0q3eaxpcrmq"
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=324729607 node_paths=PackedStringArray("walk_state")]
+script = ExtResource("3_k53q1")
+walk_state = NodePath("../Walk")
+
+[node name="Walk" type="Node" parent="StateMachine" unique_id=207817173 node_paths=PackedStringArray("idle_state")]
+script = ExtResource("4_fhl08")
+idle_state = NodePath("../Idle")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=795008773]
 texture_filter = 1
@@ -33,4 +48,4 @@ shape = SubResource("CapsuleShape2D_scb4q")
 position = Vector2(11, 2)
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=1686678565]
-radius = 26.49
+radius = 19.87

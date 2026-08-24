@@ -6,6 +6,8 @@ extends Node2D
 @export var timer: Timer
 var can_shoot_bull = true
 
+static var IS_SUSPICIOUS = true
+
 func _process(delta: float) -> void:
 	look_at(get_global_mouse_position())
 	if cos(rotation) < 0:

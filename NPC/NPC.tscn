@@ -9,9 +9,8 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ntmi"]
 radius = 7.0
 
-[node name="Npc" type="CharacterBody2D" unique_id=1508994874 node_paths=PackedStringArray("nav_agent")]
+[node name="Npc" type="CharacterBody2D" unique_id=1508994874]
 script = ExtResource("1_6fl5w")
-nav_agent = NodePath("NavigationAgent2D")
 
 [node name="StateMachine" type="Node" parent="." unique_id=1165740488 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("1_gxmj8")

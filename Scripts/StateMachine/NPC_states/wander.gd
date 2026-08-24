@@ -17,7 +17,7 @@ func enter(previous_state: State) -> void:
 func _wander_loop() -> void:
 	while true:
 		for marker in parent.actions:
-				current_target = marker.position
+				current_target = marker.global_position
 				await get_tree().create_timer(parent.actions[marker]).timeout
 				
 

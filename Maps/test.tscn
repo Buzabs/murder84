@@ -5,13 +5,16 @@
 [ext_resource type="PackedScene" uid="uid://ppex6kmmv05y" path="res://Player/player.tscn" id="3_ev8si"]
 [ext_resource type="PackedScene" uid="uid://bougn26h7pydc" path="res://NPC/NPC.tscn" id="5_scb4q"]
 [ext_resource type="Texture2D" uid="uid://b44in805uf0gk" path="res://Assets/Placeholders/npc_dead.png" id="6_3sehy"]
+[ext_resource type="Texture2D" uid="uid://cc7e5tyvc44yi" path="res://Assets/Placeholders/npc.png" id="6_mensd"]
 [ext_resource type="PackedScene" uid="uid://gl22bsxl3w20" path="res://Items/pickup.tscn" id="6_scb4q"]
+[ext_resource type="Texture2D" uid="uid://bu33e61v1tskl" path="res://Assets/Placeholders/blueman_dead.png" id="7_g55py"]
 [ext_resource type="Resource" uid="uid://urb62sjeegha" path="res://Items/ItemResources/shotgun_resource.tres" id="7_mensd"]
+[ext_resource type="Texture2D" uid="uid://devuq7umiwukh" path="res://Assets/Placeholders/blueman.png" id="8_yym6e"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_l88s5"]
-vertices = PackedVector2Array(622.0469, 13.9296875, 622.9375, 165.84375, 297.77344, 160.84375, 9.2890625, 10.0625, 18.71875, 341.96094, 301.77344, 341.03125)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-1, 0, 632, 4, 633, 176, 308, 171, 312, 351, 9, 352)])
+vertices = PackedVector2Array(301.77344, 341.03125, 18.71875, 341.96094, 9.2890625, 10.0625, 231.67188, 11.46875, 297.77344, 160.84375, 622.0469, 13.9296875, 622.9375, 165.84375)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(4, 3, 5, 6)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1, 0, 231.73575, 1.470685, 632, 4, 633, 176, 308, 171, 312, 351, 9, 352)])
 
 [node name="Test" type="Node2D" unique_id=1171783621]
 
@@ -19,38 +22,56 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-1, 0, 632, 4, 633, 176
 script = ExtResource("1_xregt")
 metadata/_custom_type_script = "uid://xoa3qf1nkqgm"
 
-[node name="Room" parent="." unique_id=1561660169 instance=ExtResource("1_y1xyx")]
+[node name="Kitchen" parent="." unique_id=1561660169 instance=ExtResource("1_y1xyx")]
 position = Vector2(160, 89)
 room_id = "Kitchen "
 
-[node name="Room2" parent="." unique_id=24690516 instance=ExtResource("1_y1xyx")]
+[node name="Piano" type="Marker2D" parent="Kitchen" unique_id=914160254]
+position = Vector2(108, 43)
+
+[node name="Table" type="Marker2D" parent="Kitchen" unique_id=1874602911]
+position = Vector2(216, -53)
+
+[node name="Hall" parent="." unique_id=24690516 instance=ExtResource("1_y1xyx")]
 position = Vector2(480, 89)
 room_id = " Hall"
 
-[node name="Room3" parent="." unique_id=533208011 instance=ExtResource("1_y1xyx")]
+[node name="LeftBottomCorner" type="Marker2D" parent="Hall" unique_id=2127532296]
+position = Vector2(-132, 65)
+
+[node name="RightUpperCorner" type="Marker2D" parent="Hall" unique_id=1537691756]
+position = Vector2(120, -55)
+
+[node name="Bedroom" parent="." unique_id=533208011 instance=ExtResource("1_y1xyx")]
 position = Vector2(160, 269)
 room_id = " Bedroom"
 
 [node name="Player" parent="." unique_id=200400303 instance=ExtResource("3_ev8si")]
 position = Vector2(161, 102)
 
-[node name="Npc" parent="." unique_id=1508994874 node_paths=PackedStringArray("actions") instance=ExtResource("5_scb4q")]
+[node name="Greenman" parent="." unique_id=1508994874 node_paths=PackedStringArray("actions") instance=ExtResource("5_scb4q")]
 position = Vector2(79, 112)
 actions = {
-NodePath("../Piano"): 10.0,
-NodePath("../Table"): 10.0
+NodePath("../Kitchen/Piano"): 10.0,
+NodePath("../Kitchen/Table"): 10.0
 }
 sprite_dead = ExtResource("6_3sehy")
+sprite_texture = ExtResource("6_mensd")
+npc_name = "Greenman"
 
-[node name="Piano" type="Marker2D" parent="." unique_id=914160254]
-position = Vector2(268, 132)
-
-[node name="Table" type="Marker2D" parent="." unique_id=1874602911]
-position = Vector2(376, 36)
+[node name="Blueman" parent="." unique_id=199707215 node_paths=PackedStringArray("actions") instance=ExtResource("5_scb4q")]
+position = Vector2(153, 234)
+actions = {
+NodePath("../Hall/RightUpperCorner"): 10.0,
+NodePath("../Hall/LeftBottomCorner"): 10.0
+}
+sprite_dead = ExtResource("7_g55py")
+sprite_texture = ExtResource("8_yym6e")
+npc_name = "Blueman"
 
 [node name="Pickup" parent="." unique_id=936480274 instance=ExtResource("6_scb4q")]
 position = Vector2(232, 58)
 item_to_give = ExtResource("7_mensd")
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1320374833]
+[node name="NavMesh" type="NavigationRegion2D" parent="." unique_id=1320374833]
 navigation_polygon = SubResource("NavigationPolygon_l88s5")

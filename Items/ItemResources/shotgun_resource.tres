@@ -9,4 +9,5 @@ script = ExtResource("1_xad46")
 item_name = "Shotgun"
 item_icon = ExtResource("1_82cyu")
 item_scene = ExtResource("2_ndc31")
+is_suspicious = true
 metadata/_custom_type_script = "uid://rl0dxmyptcy4"
